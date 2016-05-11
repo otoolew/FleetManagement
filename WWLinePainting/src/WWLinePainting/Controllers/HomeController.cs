@@ -12,21 +12,13 @@ namespace WWLinePainting.Controllers
         {
             return View();
         }
-
-        public IActionResult About()
+        public IActionResult Support()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Please contact us if you need any technical support.";
 
             return View();
         }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
+        
         public IActionResult Error()
         {
             return View();
