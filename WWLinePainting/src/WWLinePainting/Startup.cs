@@ -7,6 +7,8 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Data.Entity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace WWLinePainting
 {
@@ -33,9 +35,17 @@ namespace WWLinePainting
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddApplicationInsightsTelemetry(Configuration);
-
+            services.AddApplicationInsightsTelemetry(Configuration);    
             services.AddMvc();
+            services.AddScoped<WWLinePainting.Models.Account.AccountDataContext>();
+
+            string identityConnectionString = "Data Source=TOWER;Initial Catalog=WWFleet;Integrated Security=True";
+
+            services.AddEntityFramework().AddSqlServer().AddDbContext<Models.Account.AccountDataContext>(dbConfig =>
+                    dbConfig.UseSqlServer(identityConnectionString));
+
+            services.AddIdentity<Models.Account.ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<Models.Account.AccountDataContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,8 +54,10 @@ namespace WWLinePainting
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseApplicationInsightsRequestTelemetry();
+            app.UseIdentity();
 
+            app.UseApplicationInsightsRequestTelemetry();
+   
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();

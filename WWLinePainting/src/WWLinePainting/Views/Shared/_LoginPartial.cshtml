@@ -1,0 +1,14 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    using (Html.BeginForm("Logout", "Account"))
+    {
+        <p>Logged in as: @User.Identity.Name</p>
+                            <button class="btn-link" type="submit">Logout</button>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a asp-controller="Account" asp-action="Login">Log in</a></li>
+    </ul>
+}
