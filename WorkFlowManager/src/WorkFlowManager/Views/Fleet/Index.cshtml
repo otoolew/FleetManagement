@@ -1,5 +1,13 @@
-﻿@{
+﻿@model WorkFlowManager.Models.Vehicle[]
+
+@{
     ViewData["Title"] = "Fleet Management";
 }
 
-<h1>TODO : FLEET MANAGEMENT VIEW</h1>
+<h1>FLEET MANAGEMENT</h1>
+
+@foreach (var vehicle in Model)
+{
+    @Html.Partial("_Vehicle", vehicle)
+
+}

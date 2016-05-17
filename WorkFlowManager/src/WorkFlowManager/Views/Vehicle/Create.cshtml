@@ -1,0 +1,56 @@
+﻿@model WorkFlowManager.Models.Vehicle
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="container body-content">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.VIN)
+            @Html.EditorFor(x => x.VIN)
+            @Html.ValidationMessageFor(x => x.VIN)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Name)
+            @Html.EditorFor(x => x.Name)
+            @Html.ValidationMessageFor(x => x.Name)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Year)
+            @Html.EditorFor(x => x.Year)
+            @Html.ValidationMessageFor(x => x.Year)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Make)
+            @Html.EditorFor(x => x.Make)
+            @Html.ValidationMessageFor(x => x.Make)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Model)
+            @Html.EditorFor(x => x.Model)
+            @Html.ValidationMessageFor(x => x.Model)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Type)
+            @Html.EditorFor(x => x.Type)
+            @Html.ValidationMessageFor(x => x.Type)
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(x => x.License)
+            @Html.EditorFor(x => x.License)
+            @Html.ValidationMessageFor(x => x.License)
+        </div>
+        <button class="btn btn-default" type="submit">Register Vehicle</button>
+
+    }
+</div>
