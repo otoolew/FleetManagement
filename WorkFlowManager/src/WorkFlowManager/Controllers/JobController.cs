@@ -6,7 +6,7 @@ using Microsoft.AspNet.Mvc;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace WWLinePainting.Controllers
+namespace WorkFlowManager.Controllers
 {
     public class JobController : Controller
     {

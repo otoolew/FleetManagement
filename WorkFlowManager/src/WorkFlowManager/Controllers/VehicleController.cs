@@ -57,12 +57,10 @@ namespace WorkFlowManager.Controllers
             vehicle.Type = vehicle.Type;
             vehicle.License = vehicle.License;
 
-
-
             _dataContext.Vehicles.Add(vehicle);
             await _dataContext.SaveChangesAsync();
 
-            return RedirectToAction("Vehicle", new { id = vehicle.Id });
+            return RedirectToAction("Index");
         }
 
         public IActionResult Vehicle(long Id)
