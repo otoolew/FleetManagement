@@ -6,10 +6,17 @@
 
 <h1>FLEET MANAGEMENT</h1>
 <a asp-controller="Vehicle" asp-action="Create">New Vehicle</a>
-
-
-@*@foreach (var vehicle in Model)
+<br />
+@foreach (var vehicle in Model)
 {
-    @Html.Partial("_Vehicle", vehicle)
+    <label asp-for="@vehicle.VIN">@vehicle.VIN</label>
+    <label asp-for="@vehicle.Name">@vehicle.Name</label>
+    <label asp-for="@vehicle.Make">@vehicle.Make</label>
+    <label asp-for="@vehicle.Model">@vehicle.Model</label>
+    <label asp-for="@vehicle.Year">@vehicle.Year</label>
+    <label asp-for="@vehicle.Type">@vehicle.Type</label>
+    <label asp-for="@vehicle.License">@vehicle.License</label>
+    <br />
+    @*@Html.Partial("_Vehicle", vehicle)*@
 
-}*@
+}
