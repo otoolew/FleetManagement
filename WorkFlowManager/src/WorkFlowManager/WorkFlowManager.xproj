@@ -22,5 +22,3 @@
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>
-
-<label asp-for="@vehicle.VIN">@vehicle.VIN"</label>

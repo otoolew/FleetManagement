@@ -1,22 +1,47 @@
-﻿@model WorkFlowManager.Models.Vehicle[]
+﻿@model IEnumerable<WorkFlowManager.Models.Vehicle>
 
 @{
     ViewData["Title"] = "Fleet Management";
 }
 
 <h1>FLEET MANAGEMENT</h1>
+
 <a asp-controller="Vehicle" asp-action="Create">New Vehicle</a>
 <br />
+
 @foreach (var vehicle in Model)
 {
-    <label asp-for="@vehicle.VIN">@vehicle.VIN</label>
-    <label asp-for="@vehicle.Name">@vehicle.Name</label>
-    <label asp-for="@vehicle.Make">@vehicle.Make</label>
-    <label asp-for="@vehicle.Model">@vehicle.Model</label>
-    <label asp-for="@vehicle.Year">@vehicle.Year</label>
-    <label asp-for="@vehicle.Type">@vehicle.Type</label>
-    <label asp-for="@vehicle.License">@vehicle.License</label>
-    <br />
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => vehicle.VIN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => vehicle.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => vehicle.Make)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => vehicle.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => vehicle.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => vehicle.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => vehicle.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => vehicle.License)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = vehicle.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = vehicle.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = vehicle.Id })
+        </td>
+    </tr>
+    <br/>
     @*@Html.Partial("_Vehicle", vehicle)*@
-
 }
