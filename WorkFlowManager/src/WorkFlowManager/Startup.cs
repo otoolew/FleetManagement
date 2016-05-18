@@ -55,8 +55,8 @@ namespace WorkFlowManager
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
-            services.AddScoped<WorkFlowManager.Models.VehicleDataContext>();// Dependancy Injection
-            services.AddTransient<WorkFlowManager.Models.FormatService>();
+            services.AddScoped<VehicleDataContext>();// Dependancy Injection
+            services.AddTransient<FormatService>();
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
@@ -100,15 +100,13 @@ namespace WorkFlowManager
             app.UseStaticFiles();
 
             app.UseIdentity();
-
-            // To configure external authentication please see http://go.microsoft.com/fwlink/?LinkID=532715
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.UseMvcWithDefaultRoute();
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=Index}/{id?}");
+            //});
         }
 
         // Entry point for the application.

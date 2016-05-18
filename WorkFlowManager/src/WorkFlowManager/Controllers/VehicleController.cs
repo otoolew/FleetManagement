@@ -5,13 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using WorkFlowManager.Models;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WorkFlowManager.Controllers
 {
     public class VehicleController : Controller
     {
-
         readonly VehicleDataContext _dataContext;
 
         public VehicleController(VehicleDataContext dataContext)
@@ -21,7 +19,8 @@ namespace WorkFlowManager.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var posts = _dataContext.Vehicles.OrderByDescending(x => x.Id).ToArray();
+            return View(posts);
         }
 
         [HttpGet]

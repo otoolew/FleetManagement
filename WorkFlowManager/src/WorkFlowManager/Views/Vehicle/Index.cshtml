@@ -5,9 +5,11 @@
 }
 
 <h1>FLEET MANAGEMENT</h1>
-<a class="btn btn-default" href="~/views/vehicle/create.cshtml">New Vehicle</a>
-@foreach (var vehicle in Model)
+<a asp-controller="Vehicle" asp-action="Create">New Vehicle</a>
+
+
+@*@foreach (var vehicle in Model)
 {
     @Html.Partial("_Vehicle", vehicle)
 
-}
+}*@
