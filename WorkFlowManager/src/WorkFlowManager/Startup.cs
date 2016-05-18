@@ -55,7 +55,8 @@ namespace WorkFlowManager
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
-
+            services.AddScoped<WorkFlowManager.Models.VehicleDataContext>();// Dependancy Injection
+            services.AddTransient<WorkFlowManager.Models.FormatService>();
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
