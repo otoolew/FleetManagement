@@ -8,6 +8,7 @@ namespace WorkFlowManager.Models
 {
     public class Vehicle
     {
+        [Key]
         public long Id { get; set; }
 
         [Required]
@@ -51,5 +52,7 @@ namespace WorkFlowManager.Models
         [Display(Name = "License")]
         //[StringLength(50, MinimumLength = 10, ErrorMessage = "License must be between 10 and 50 characters long.")]
         public string License { get; set; }
+
+        //public List<Part> Parts { get; set; }
     }
 }

@@ -92,7 +92,6 @@ namespace WorkFlowManager
                 }
                 catch { }
             }
-
             app.UseIISPlatformHandler(options => options.AuthenticationDescriptions.Clear());
 
             app.UseApplicationInsightsExceptionTelemetry();
