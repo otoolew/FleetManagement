@@ -31,4 +31,10 @@ textarea {
     .carousel-caption {
         z-index: 10 !important;
     }
+    .navbar-nav {
+        height:50px;
+    }
+    .body {
+        padding-top:75px;
+    }
 }
