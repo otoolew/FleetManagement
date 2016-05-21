@@ -9,21 +9,30 @@ namespace WorkFlowManager.Models
     public class Part
     {
         public long Id { get; set; }
+
         [Required]
         [DataType(DataType.Text)]
         [Display(Name = "Serial Number")]
-        private string Serial { get; set; }
+        public string Serial { get; set; }
+
         [Required]
         [DataType(DataType.Text)]
         [Display(Name = "Name")]
-        private string Name { get; set; }
+        public string Name { get; set; }
+
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Model Name")]
-        private string Model { get; set; }
+        [Display(Name = "Make")]
+        public string Make { get; set; }
+
         [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Model")]
+        public string Model { get; set; }
+
+        [Required]   
         [DataType(DataType.Text)]
         [Display(Name = "Type")]
-        private string Type { get; set; }
+        public string Type { get; set; }
     }
 }
