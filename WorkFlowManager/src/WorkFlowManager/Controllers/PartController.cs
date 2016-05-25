@@ -19,8 +19,8 @@ namespace WorkFlowManager.Controllers
 
         public IActionResult Index()
         {
-            var vehicles = _dataContext.Parts.OrderByDescending(x => x.Id).ToArray();
-            return View(vehicles);
+            var parts = _dataContext.Parts.OrderByDescending(x => x.Id).ToArray();
+            return View(parts);
         }
 
         [HttpGet]

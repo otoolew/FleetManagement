@@ -6,64 +6,52 @@
 
 <h1>Inventory Management</h1>
 
-<a asp-controller="PArt" asp-action="Create" class="btn btn-success">New Vehicle</a>
+<a asp-controller="Part" asp-action="Create" class="btn btn-success">New Part</a>
 <br />
 <table class="table table-striped">
     <thead>
         <tr>
             <th>
-                VIN
+                Serial
             </th>
             <th>
                 Name
             </th>
             <th>
                 Make
-            </th>
-            <th>
-                Year
-            </th>
+            </th>          
             <th>
                 Model
             </th>
             <th>
                 Type
-            </th>
-            <th>
-                License
-            </th>
+            </th>        
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var vehicle in Model)
+        @foreach (var part in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => vehicle.VIN)
+                    @Html.DisplayFor(modelItem => part.Serial)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => vehicle.Name)
+                    @Html.DisplayFor(modelItem => part.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => vehicle.Make)
+                    @Html.DisplayFor(modelItem => part.Make)
+                </td>             
+                <td>
+                    @Html.DisplayFor(modelItem => part.Model)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => vehicle.Year)
-                </td>
+                    @Html.DisplayFor(modelItem => part.Type)
+                </td>              
                 <td>
-                    @Html.DisplayFor(modelItem => vehicle.Model)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => vehicle.Type)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => vehicle.License)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { Id = vehicle.Id }) |
-                    @Html.ActionLink("Details", "Details", new { Id = vehicle.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { Id = vehicle.Id })
+                    @Html.ActionLink("Edit", "Edit", new { Id = part.Id }) |
+                    @Html.ActionLink("Details", "Details", new { Id = part.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { Id = part.Id })
                 </td>
             </tr>
 

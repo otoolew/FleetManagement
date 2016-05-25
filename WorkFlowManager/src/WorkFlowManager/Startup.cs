@@ -56,6 +56,7 @@ namespace WorkFlowManager
 
             services.AddMvc();
             services.AddScoped<VehicleDataContext>();// Dependancy Injection
+            services.AddScoped<PartDataContext>();// Dependancy Injection
             services.AddTransient<FormatService>();
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();

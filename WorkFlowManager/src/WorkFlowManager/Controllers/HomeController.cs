@@ -16,6 +16,10 @@ namespace WorkFlowManager.Controllers
         {
             return View();
         }
+        public IActionResult Part()
+        {
+            return View();
+        }
         public IActionResult Support()
         {
             ViewData["Message"] = "Please contact us if you need any technical support.";

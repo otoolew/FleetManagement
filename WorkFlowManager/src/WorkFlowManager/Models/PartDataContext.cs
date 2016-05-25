@@ -8,9 +8,9 @@ namespace WorkFlowManager.Models
 {
     public class PartDataContext : DbContext
     {
+        // Controller will use
         public DbSet<Part> Parts { get; set; }
-     
-        // Constructor     
+       
         public PartDataContext()
         {
             Database.EnsureCreated();
