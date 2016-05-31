@@ -1,5 +1,64 @@
-﻿@{
-    ViewData["Title"] = "Jobs";
+﻿@model IEnumerable<WorkFlowManager.Models.Job>
+
+@{
+    ViewData["Title"] = "Inventory Management";
 }
 
-<h1>TODO : JOB VIEW</h1>
+<h1>Job Management</h1>
+
+<a asp-controller="Job" asp-action="Create" class="btn btn-success">New Job</a>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                ECMS
+            </th>
+            <th>
+                Number
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Amount
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var part in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => part.ECMS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Amount)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Id = part.Id }) |
+                    @Html.ActionLink("Details", "Details", new { Id = part.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { Id = part.Id })
+                </td>
+            </tr>           
+        }
+    </tbody>
+</table>

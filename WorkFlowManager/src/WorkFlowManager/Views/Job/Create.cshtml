@@ -1,5 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model WorkFlowManager.Models.Job
+
 @{
+    Layout = "_Layout";
+}
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.ECMS)
+            @Html.EditorFor(x => x.ECMS)
+            @Html.ValidationMessageFor(x => x.ECMS)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Number)
+            @Html.EditorFor(x => x.Number)
+            @Html.ValidationMessageFor(x => x.Number)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Description)
+            @Html.EditorFor(x => x.Description)
+            @Html.ValidationMessageFor(x => x.Description)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Quantity)
+            @Html.EditorFor(x => x.Quantity)
+            @Html.ValidationMessageFor(x => x.Quantity)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Price)
+            @Html.EditorFor(x => x.Price)
+            @Html.ValidationMessageFor(x => x.Price)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Amount)
+            @Html.EditorFor(x => x.Amount)
+            @Html.ValidationMessageFor(x => x.Amount)
+        </div>
+
+        <button class="btn btn-default" type="submit">Add Job Listing</button>
+    </div>
 }

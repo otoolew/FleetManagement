@@ -42,8 +42,7 @@ namespace WorkFlowManager.Models
         public string Price { get; set; }
 
         [Required]
-        [DataType(DataType.Currency)]
-        [Range(1940, 2100, ErrorMessage = "Please enter a valid Year")]
+        [DataType(DataType.Currency)]     
         [Display(Name = "Amount")]
         public string Amount { get; set; }
 
