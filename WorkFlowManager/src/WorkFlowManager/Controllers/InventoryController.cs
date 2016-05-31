@@ -15,5 +15,13 @@ namespace WorkFlowManager.Controllers
         {
             return View();
         }
+        public IActionResult Equipment()
+        {
+            return View();
+        }
+        public IActionResult Parts()
+        {
+            return View();
+        }
     }
 }

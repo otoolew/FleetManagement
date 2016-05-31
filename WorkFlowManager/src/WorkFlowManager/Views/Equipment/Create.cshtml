@@ -1,0 +1,45 @@
+﻿@model WorkFlowManager.Models.Equipment
+
+@{
+    Layout = "_Layout";
+}
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Serial)
+            @Html.EditorFor(x => x.Serial)
+            @Html.ValidationMessageFor(x => x.Serial)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Name)
+            @Html.EditorFor(x => x.Name)
+            @Html.ValidationMessageFor(x => x.Name)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Make)
+            @Html.EditorFor(x => x.Make)
+            @Html.ValidationMessageFor(x => x.Make)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Model)
+            @Html.EditorFor(x => x.Model)
+            @Html.ValidationMessageFor(x => x.Model)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Type)
+            @Html.EditorFor(x => x.Type)
+            @Html.ValidationMessageFor(x => x.Type)
+        </div>
+
+        <button class="btn btn-default" type="submit">Add Part to Inventory</button>
+    </div>
+}

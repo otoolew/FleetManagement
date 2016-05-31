@@ -9,19 +9,19 @@ using WorkFlowManager.Models;
 
 namespace WorkFlowManager.Controllers
 {
-    public class JobController : Controller
+    public class EquipmentController : Controller
     {
-        readonly JobDataContext _dataContext;
+        readonly EquipmentDataContext _dataContext;
 
-        public JobController(JobDataContext dataContext)
+        public EquipmentController(EquipmentDataContext dataContext)
         {
             _dataContext = dataContext;
         }
 
         public IActionResult Index()
         {
-            var jobs = _dataContext.Jobs.OrderByDescending(x => x.Id).ToArray();
-            return View(jobs);
+            var equipmentList = _dataContext.EquipmentList.OrderByDescending(x => x.Id).ToArray();
+            return View(equipmentList);
         }
 
         [HttpGet]
@@ -31,12 +31,12 @@ namespace WorkFlowManager.Controllers
             {
                 return new HttpStatusCodeResult(400);
             }
-            Job job = _dataContext.Jobs.SingleOrDefault(x => x.Id == Id);
-            if (job == null)
+            Equipment piece = _dataContext.EquipmentList.SingleOrDefault(x => x.Id == Id);
+            if (piece == null)
             {
                 return HttpNotFound();
             }
-            return View(job);
+            return View(piece);
         }
 
         [HttpGet]
@@ -45,7 +45,7 @@ namespace WorkFlowManager.Controllers
             return View();
         }
 
-        public class CreateJobRequest
+        public class CreateEquipmentRequest
         {
             public string Serial { get; set; }
             public string Name { get; set; }
@@ -55,20 +55,20 @@ namespace WorkFlowManager.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Job job)
+        public async Task<IActionResult> Create(Equipment piece)
         {
             if (!ModelState.IsValid)
             {
-                return View(job);
+                return View(piece);
             }
 
-            job.ECMS = job.ECMS;
-            job.Name = job.Name;
-            job.Make = job.Make;
-            job.Model = job.Model;
-            job.Type = job.Type;
+            piece.Serial = piece.Serial;
+            piece.Name = piece.Name;
+            piece.Make = piece.Make;
+            piece.Model = piece.Model;
+            piece.Type = piece.Type;
 
-            _dataContext.Jobs.Add(job);
+            _dataContext.EquipmentList.Add(piece);
 
             await _dataContext.SaveChangesAsync();
 
@@ -82,30 +82,30 @@ namespace WorkFlowManager.Controllers
             {
                 return new HttpStatusCodeResult(400);
             }
-            Job job = _dataContext.Jobs.SingleOrDefault(x => x.Id == Id);
-            if (job == null)
+            Equipment piece = _dataContext.EquipmentList.SingleOrDefault(x => x.Id == Id);
+            if (piece == null)
             {
                 return HttpNotFound();
             }
-            return View(job);
+            return View(piece);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Job job)
+        public async Task<IActionResult> Edit(Equipment piece)
         {
             if (!ModelState.IsValid)
             {
-                return View(job);
+                return View(piece);
             }
 
-            job.ECMS = job.ECMS;
-            job.Name = job.Name;
-            job.Make = job.Make;
-            job.Model = job.Model;
-            job.Type = job.Type;
+            piece.Serial = piece.Serial;
+            piece.Name = piece.Name;
+            piece.Make = piece.Make;
+            piece.Model = piece.Model;
+            piece.Type = piece.Type;
 
-            _dataContext.Jobs.Update(job);
+            _dataContext.EquipmentList.Update(piece);
 
             await _dataContext.SaveChangesAsync();
 
@@ -119,30 +119,29 @@ namespace WorkFlowManager.Controllers
             {
                 return new HttpStatusCodeResult(400);
             }
-            Job job = _dataContext.Jobs.SingleOrDefault(x => x.Id == Id);
-            if (job == null)
+            Equipment piece = _dataContext.EquipmentList.SingleOrDefault(x => x.Id == Id);
+            if (piece == null)
             {
                 return HttpNotFound();
             }
-            return View(job);
+            return View(piece);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(long Id)
         {
-            Job job = _dataContext.Jobs.SingleOrDefault(x => x.Id == Id);
-            _dataContext.Jobs.Remove(job);
+            Equipment piece = _dataContext.EquipmentList.SingleOrDefault(x => x.Id == Id);
+            _dataContext.EquipmentList.Remove(piece);
             await _dataContext.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
-        public IActionResult Job(long Id)
+        public IActionResult Equipment(long Id)
         {
-            var db = new JobDataContext();
-            var job = db.Jobs.SingleOrDefault(x => x.Id == Id);
-            return View(job);
+            var db = new EquipmentDataContext();
+            var piece = db.EquipmentList.SingleOrDefault(x => x.Id == Id);
+            return View(piece);
         }
     }
 }
-

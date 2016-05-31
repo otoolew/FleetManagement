@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WorkFlowManager.Models.Equipment>
+
+@{
+    ViewData["Title"] = "Equipment Management";
+}
+
+<h1>Equipment Overview</h1>
+
+<a asp-controller="Part" asp-action="Create" class="btn btn-success">New Part</a>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Serial
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Make
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Type
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var part in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Serial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Make)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Type)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Id = part.Id }) |
+                    @Html.ActionLink("Details", "Details", new { Id = part.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { Id = part.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
