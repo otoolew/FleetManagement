@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Data.Entity;
+using System.Threading.Tasks;
 
 namespace WorkFlowManager.Models
 {
-    public class EquipmentDataContext : DbContext
+    public class BidDataContext : DbContext
     {
-        // Controller will use
-        public DbSet<Equipment> EquipmentList { get; set; }
+        public DbSet<Bid> Bids { get; set; }
 
-        public EquipmentDataContext()
+        public BidDataContext()
         {
             Database.EnsureCreated();
         }
@@ -26,6 +25,5 @@ namespace WorkFlowManager.Models
             base.OnModelCreating(modelBuilder);
             modelBuilder.ForSqlServerUseIdentityColumns();
         }
-
     }
 }

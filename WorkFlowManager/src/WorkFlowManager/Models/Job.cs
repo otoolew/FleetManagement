@@ -19,39 +19,33 @@ namespace WorkFlowManager.Models
 
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Name")]
+        [Display(Name = "Number")]
+        //[StringLength(100, MinimumLength = 5, ErrorMessage = "VIN must be between 5 and 100 characters long.")]
+        public string Number { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Description")]
         //[StringLength(100, MinimumLength = 5, ErrorMessage = "Name must be between 5 and 100 characters long.")]
-        public string Name { get; set; }
+        public string Description { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Make")]
+        [Display(Name = "Quantity")]
         //[StringLength(50, MinimumLength = 3, ErrorMessage = "Make must be between 3 and 50 characters long.")]
-        public string Make { get; set; }
+        public string Quantity { get; set; }
 
         [Required]
-        [DataType(DataType.Text)]
-        [Display(Name = "Model")]
+        [DataType(DataType.Currency)]
+        [Display(Name = "Price")]
         //[StringLength(50, MinimumLength = 3, ErrorMessage = "Model must be between 3 and 50 characters long.")]
-        public string Model { get; set; }
+        public string Price { get; set; }
 
         [Required]
-        [DataType(DataType.Text)]
+        [DataType(DataType.Currency)]
         [Range(1940, 2100, ErrorMessage = "Please enter a valid Year")]
-        [Display(Name = "Year")]
-        public string Year { get; set; }
-
-        [Required]
-        [DataType(DataType.Text)]
-        [Display(Name = "Type")]
-        //[StringLength(50, MinimumLength = 3, ErrorMessage = "Type must be between 3 and 50 characters long.")]
-        public string Type { get; set; }
-
-        [Required]
-        [DataType(DataType.Text)]
-        [Display(Name = "License")]
-        //[StringLength(50, MinimumLength = 10, ErrorMessage = "License must be between 10 and 50 characters long.")]
-        public string License { get; set; }
+        [Display(Name = "Amount")]
+        public string Amount { get; set; }
 
         //public List<Part> Parts { get; set; }
     }

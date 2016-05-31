@@ -47,10 +47,10 @@ namespace WorkFlowManager.Controllers
 
         public class CreateEquipmentRequest
         {
-            public string Serial { get; set; }
             public string Name { get; set; }
             public string Make { get; set; }
             public string Model { get; set; }
+            public string Year { get; set; }
             public string Type { get; set; }
         }
 
@@ -61,11 +61,11 @@ namespace WorkFlowManager.Controllers
             {
                 return View(piece);
             }
-
-            piece.Serial = piece.Serial;
+          
             piece.Name = piece.Name;
             piece.Make = piece.Make;
             piece.Model = piece.Model;
+            piece.Year = piece.Year;
             piece.Type = piece.Type;
 
             _dataContext.EquipmentList.Add(piece);
@@ -98,11 +98,11 @@ namespace WorkFlowManager.Controllers
             {
                 return View(piece);
             }
-
-            piece.Serial = piece.Serial;
+            
             piece.Name = piece.Name;
             piece.Make = piece.Make;
             piece.Model = piece.Model;
+            piece.Year = piece.Year;
             piece.Type = piece.Type;
 
             _dataContext.EquipmentList.Update(piece);

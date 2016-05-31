@@ -19,7 +19,7 @@ namespace WorkFlowManager.Controllers
         {
             return View();
         }
-        public IActionResult Parts()
+        public IActionResult Part()
         {
             return View();
         }

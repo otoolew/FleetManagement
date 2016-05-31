@@ -6,14 +6,11 @@
 
 <h1>Equipment Overview</h1>
 
-<a asp-controller="Part" asp-action="Create" class="btn btn-success">New Part</a>
+<a asp-controller="Equipment" asp-action="Create" class="btn btn-success">New Equipment</a>
 <br />
 <table class="table table-striped">
     <thead>
-        <tr>
-            <th>
-                Serial
-            </th>
+        <tr>           
             <th>
                 Name
             </th>
@@ -24,18 +21,17 @@
                 Model
             </th>
             <th>
-                Type
+                Year
             </th>
-            <th></th>
+            <th>
+                Type
+            </th>           
         </tr>
     </thead>
     <tbody>
         @foreach (var part in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => part.Serial)
-                </td>
+            <tr>              
                 <td>
                     @Html.DisplayFor(modelItem => part.Name)
                 </td>
@@ -44,6 +40,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => part.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Year)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => part.Type)

@@ -5,8 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using WorkFlowManager.Models;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace WorkFlowManager.Controllers
 {
     public class JobController : Controller
@@ -45,13 +43,14 @@ namespace WorkFlowManager.Controllers
             return View();
         }
 
-        public class CreateJobRequest
+        public class CreateBidRequest
         {
-            public string Serial { get; set; }
-            public string Name { get; set; }
-            public string Make { get; set; }
-            public string Model { get; set; }
-            public string Type { get; set; }
+            public string ECMS { get; set; }
+            public string Number { get; set; }
+            public string Description { get; set; }
+            public string Quantity { get; set; }
+            public string Price { get; set; }
+            public string Amount { get; set; }
         }
 
         [HttpPost]
@@ -61,12 +60,12 @@ namespace WorkFlowManager.Controllers
             {
                 return View(job);
             }
-
             job.ECMS = job.ECMS;
-            job.Name = job.Name;
-            job.Make = job.Make;
-            job.Model = job.Model;
-            job.Type = job.Type;
+            job.Number = job.Number;
+            job.Description = job.Description;
+            job.Quantity = job.Quantity;
+            job.Price = job.Price;
+            job.Amount = job.Amount;
 
             _dataContext.Jobs.Add(job);
 
@@ -98,12 +97,12 @@ namespace WorkFlowManager.Controllers
             {
                 return View(job);
             }
-
             job.ECMS = job.ECMS;
-            job.Name = job.Name;
-            job.Make = job.Make;
-            job.Model = job.Model;
-            job.Type = job.Type;
+            job.Number = job.Number;
+            job.Description = job.Description;
+            job.Quantity = job.Quantity;
+            job.Price = job.Price;
+            job.Amount = job.Amount;
 
             _dataContext.Jobs.Update(job);
 

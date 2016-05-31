@@ -9,12 +9,7 @@ namespace WorkFlowManager.Models
     public class Equipment
     {
         public long Id { get; set; }
-
-        [Required]
-        [DataType(DataType.Text)]
-        [Display(Name = "Serial Number")]
-        public string Serial { get; set; }
-
+       
         [Required]
         [DataType(DataType.Text)]
         [Display(Name = "Name")]
@@ -29,6 +24,11 @@ namespace WorkFlowManager.Models
         [DataType(DataType.Text)]
         [Display(Name = "Model")]
         public string Model { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Year")]
+        public string Year { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
