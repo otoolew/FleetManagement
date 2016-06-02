@@ -60,8 +60,7 @@ namespace WorkFlowManager
             services.AddScoped<VehicleDataContext>();// Dependancy Injection
             services.AddScoped<PartDataContext>();// Dependancy Injection
             services.AddScoped<EquipmentDataContext>();// Dependancy Injection
-            services.AddScoped<JobDataContext>();// Dependancy Injection
-            services.AddScoped<BidDataContext>();// Dependancy Injection
+            services.AddScoped<JobDataContext>();// Dependancy Injection           
             services.AddScoped<WorkerDataContext>();// Dependancy Injection
             services.AddScoped<MaterialDataContext>();// Dependancy Injection
 

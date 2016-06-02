@@ -13,14 +13,17 @@
     <thead>
         <tr>
             <th>
+                Item Number
+            </th>
+            <th>
                 Description
             </th>
             <th>
-                Price Per Foot
-            </th>
-            <th>
-                Job Title
+                BinLocation
             </th>          
+            <th>
+                Price
+            </th>                    
             <th>
                 Quantity
             </th>                
@@ -31,7 +34,13 @@
         {
             <tr>
                 <td>
+                    @Html.DisplayFor(modelItem => material.ItemNumber)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => material.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => material.BinLocation)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => material.Price)

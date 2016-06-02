@@ -18,14 +18,17 @@
                 Name
             </th>
             <th>
-                Make
+                Brand
             </th>          
             <th>
                 Model
             </th>
             <th>
                 Type
-            </th>        
+            </th>   
+            <th>
+                Supplier
+            </th>       
         </tr>
     </thead>
     <tbody>
@@ -39,14 +42,17 @@
                     @Html.DisplayFor(modelItem => part.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => part.Make)
+                    @Html.DisplayFor(modelItem => part.Brand)
                 </td>             
                 <td>
                     @Html.DisplayFor(modelItem => part.Model)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => part.Type)
-                </td>              
+                </td> 
+                <td>
+                    @Html.DisplayFor(modelItem => part.Supplier)
+                </td>               
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { Id = part.Id }) |
                     @Html.ActionLink("Details", "Details", new { Id = part.Id }) |

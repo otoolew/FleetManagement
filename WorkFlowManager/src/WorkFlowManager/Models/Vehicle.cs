@@ -47,11 +47,25 @@ namespace WorkFlowManager.Models
         //[StringLength(50, MinimumLength = 3, ErrorMessage = "Type must be between 3 and 50 characters long.")]
         public string Type { get; set; }
 
-        [Required]
         [DataType(DataType.Text)]
         [Display(Name = "License")]
         //[StringLength(50, MinimumLength = 10, ErrorMessage = "License must be between 10 and 50 characters long.")]
         public string License { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "Registration")]
+        //[StringLength(50, MinimumLength = 10, ErrorMessage = "License must be between 10 and 50 characters long.")]
+        public string Registration { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "Engine")]
+        //[StringLength(50, MinimumLength = 10, ErrorMessage = "License must be between 10 and 50 characters long.")]
+        public string Engine { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "Transmission")]
+        //[StringLength(50, MinimumLength = 10, ErrorMessage = "License must be between 10 and 50 characters long.")]
+        public string Transmission { get; set; }
 
         //public List<Part> Parts { get; set; }
     }

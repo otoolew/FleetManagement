@@ -4,17 +4,16 @@
     ViewBag.Title = "Material Details";
 }
 
-<h2>Details</h2>
+<h2>@Html.DisplayFor(model => model.Description)</h2>
 <div>
-    <h4>Material</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal">       
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.BinLocation)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @Html.DisplayFor(model => model.BinLocation)
         </dd>
 
         <dt>

@@ -3,41 +3,19 @@
     Layout = "_Layout";
     ViewBag.Title = "Worker Details";
 }
-<h2>Details</h2>
+<h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h2>
 <div>
-    <h4>Worker</h4>
+    <h4>@Html.DisplayFor(model => model.JobTitle)</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.JobTitle)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.JobTitle)
-        </dd>
+    <dl class="dl-horizontal">        
         <dt>
             @Html.DisplayNameFor(model => model.HourlyRate)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.HourlyRate)
-        </dd>       
+        </dd>   
+            
         <dt>
             @Html.DisplayNameFor(model => model.License)
         </dt>

@@ -3,19 +3,11 @@
     Layout = "_Layout";
     ViewBag.Title = "Equipment Details";
 }
-<h2>Details</h2>
+<h2>@Html.DisplayFor(model => model.Name)</h2>
 <div>
-    <h4>Equipment</h4>
+    <h4>Details</h4>
     <hr />
-    <dl class="dl-horizontal">    
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
+    <dl class="dl-horizontal">           
         <dt>
             @Html.DisplayNameFor(model => model.Make)
         </dt>

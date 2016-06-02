@@ -16,19 +16,19 @@
                 ECMS
             </th>
             <th>
-                Number
+                Contractor
             </th>
             <th>
-                Description
+                County
             </th>
             <th>
-                Quantity
+                Location
             </th>
             <th>
-                Price
+                BidLetDate
             </th>
             <th>
-                Amount
+                QuoteDate
             </th>
         </tr>
     </thead>
@@ -40,19 +40,19 @@
                     @Html.DisplayFor(modelItem => part.ECMS)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => part.Number)
+                    @Html.DisplayFor(modelItem => part.Contractor)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => part.Description)
+                    @Html.DisplayFor(modelItem => part.County)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => part.Quantity)
+                    @Html.DisplayFor(modelItem => part.Location)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => part.Price)
+                    @Html.DisplayFor(modelItem => part.BidLetDate)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => part.Amount)
+                    @Html.DisplayFor(modelItem => part.QuoteDate)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { Id = part.Id }) |

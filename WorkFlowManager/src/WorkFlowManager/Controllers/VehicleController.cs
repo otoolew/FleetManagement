@@ -46,16 +46,16 @@ namespace WorkFlowManager.Controllers
             return View();
         }
 
-        public class CreateVehicleRequest
-        {
-            public string VIN { get; set; }
-            public string Name { get; set; }
-            public string Year { get; set; }
-            public string Make { get; set; }
-            public string Model { get; set; }
-            public string Type { get; set; }
-            public string License { get; set; }
-        }
+        //public class CreateVehicleRequest
+        //{
+        //    public string VIN { get; set; }
+        //    public string Name { get; set; }
+        //    public string Year { get; set; }
+        //    public string Make { get; set; }
+        //    public string Model { get; set; }
+        //    public string Type { get; set; }
+        //    public string Registration { get; set; }
+        //}
 
         [HttpPost]
         public async Task<IActionResult> Create(Vehicle vehicle)
@@ -71,7 +71,9 @@ namespace WorkFlowManager.Controllers
             vehicle.Make = vehicle.Make;
             vehicle.Model = vehicle.Model;
             vehicle.Type = vehicle.Type;
-            vehicle.License = vehicle.License;
+            vehicle.Registration = vehicle.Registration;
+            vehicle.Engine = vehicle.Engine;
+            vehicle.Transmission = vehicle.Transmission;
 
             _dataContext.Vehicles.Add(vehicle);
 
@@ -110,7 +112,9 @@ namespace WorkFlowManager.Controllers
             vehicle.Make = vehicle.Make;
             vehicle.Model = vehicle.Model;
             vehicle.Type = vehicle.Type;
-            vehicle.License = vehicle.License;
+            vehicle.Registration = vehicle.Registration;
+            vehicle.Engine = vehicle.Engine;
+            vehicle.Transmission = vehicle.Transmission;
 
             _dataContext.Vehicles.Update(vehicle);
 

@@ -22,8 +22,8 @@ namespace WorkFlowManager.Models
 
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Make")]
-        public string Make { get; set; }
+        [Display(Name = "Brand")]
+        public string Brand { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
@@ -34,5 +34,10 @@ namespace WorkFlowManager.Models
         [DataType(DataType.Text)]
         [Display(Name = "Type")]
         public string Type { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Supplier")]
+        public string Supplier { get; set; }
     }
 }

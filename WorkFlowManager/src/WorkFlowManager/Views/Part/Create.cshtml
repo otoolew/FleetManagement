@@ -24,9 +24,9 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(x => x.Make)
-            @Html.EditorFor(x => x.Make)
-            @Html.ValidationMessageFor(x => x.Make)
+            @Html.LabelFor(x => x.Brand)
+            @Html.EditorFor(x => x.Brand)
+            @Html.ValidationMessageFor(x => x.Brand)
         </div>
 
         <div class="form-group">
@@ -39,6 +39,11 @@
             @Html.LabelFor(x => x.Type)
             @Html.EditorFor(x => x.Type)
             @Html.ValidationMessageFor(x => x.Type)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Supplier)
+            @Html.EditorFor(x => x.Supplier)
+            @Html.ValidationMessageFor(x => x.Supplier)
         </div>
 
         <button class="btn btn-default" type="submit">Add Part to Inventory</button>

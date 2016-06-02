@@ -12,9 +12,21 @@
     <div class="form-horizontal">
      
         <div class="form-group">
+            @Html.LabelFor(x => x.ItemNumber)
+            @Html.EditorFor(x => x.ItemNumber)
+            @Html.ValidationMessageFor(x => x.ItemNumber)
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(x => x.Description)
             @Html.EditorFor(x => x.Description)
             @Html.ValidationMessageFor(x => x.Description)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.BinLocation)
+            @Html.EditorFor(x => x.BinLocation)
+            @Html.ValidationMessageFor(x => x.BinLocation)
         </div>
 
         <div class="form-group">
