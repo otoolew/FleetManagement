@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<WorkFlowManager.Models.Vehicle>
 
 @{
-    ViewData["Title"] = "Fleet Management";
+    Layout = "_Layout";
+    ViewBag.Title = "Vehicles";
 }
-
 <h1>FLEET MANAGEMENT</h1>
 
 <a asp-controller="Vehicle" asp-action="Create" class="btn btn-success">New Vehicle</a>

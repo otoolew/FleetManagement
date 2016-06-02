@@ -12,7 +12,7 @@ namespace WorkFlowManager.Controllers
     public class WorkerController : Controller
     {
         readonly WorkerDataContext _dataContext;
-
+        
         public WorkerController(WorkerDataContext dataContext)
         {
             _dataContext = dataContext;

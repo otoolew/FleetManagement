@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<WorkFlowManager.Models.Part>
-
 @{
-    ViewData["Title"] = "Inventory Management";
+    Layout = "_Layout";
+    ViewBag.Title = "Parts";
 }
 
-<h1>Inventory Management</h1>
+<h1>Parts Management</h1>
 
 <a asp-controller="Part" asp-action="Create" class="btn btn-success">New Part</a>
 <br />
