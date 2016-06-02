@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using WorkFlowManager.Models;
 using WorkFlowManager.Services;
 using WorkFlowManager.ViewModels.Account;
+using WorkFlowManager.DAL;
 
 namespace WorkFlowManager.Controllers
 {

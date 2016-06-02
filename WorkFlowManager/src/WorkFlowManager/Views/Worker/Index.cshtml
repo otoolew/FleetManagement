@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WorkFlowManager.Models.Worker>
+
+@{
+    ViewData["Title"] = "Crew Management";
+}
+
+<h1>Inventory Management</h1>
+
+<a asp-controller="Worker" asp-action="Create" class="btn btn-success">New Worker</a>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                FirstName
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Job Title
+            </th>          
+            <th>
+                Hourly Rate
+            </th>
+            <th>
+                License
+            </th>        
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var worker in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => worker.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => worker.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => worker.JobTitle)
+                </td>             
+                <td>
+                    @Html.DisplayFor(modelItem => worker.HourlyRate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => worker.License)
+                </td>              
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Id = worker.Id }) |
+                    @Html.ActionLink("Details", "Details", new { Id = worker.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { Id = worker.Id })
+                </td>
+            </tr>
+
+            @*@Html.Partial("_Vehicle", vehicle)*@
+        }
+    </tbody>
+</table>

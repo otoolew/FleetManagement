@@ -10,8 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WorkFlowManager.Models;
+using WorkFlowManager.DAL;
 using WorkFlowManager.Services;
-
 namespace WorkFlowManager
 {
     public class Startup
@@ -62,6 +62,8 @@ namespace WorkFlowManager
             services.AddScoped<EquipmentDataContext>();// Dependancy Injection
             services.AddScoped<JobDataContext>();// Dependancy Injection
             services.AddScoped<BidDataContext>();// Dependancy Injection
+            services.AddScoped<WorkerDataContext>();// Dependancy Injection
+
 
             services.AddTransient<FormatService>();
             // Add application services.

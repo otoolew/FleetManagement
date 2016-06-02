@@ -2,6 +2,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using WorkFlowManager.Models;
+using WorkFlowManager.DAL;
 
 namespace WorkFlowManager.Controllers
 {

@@ -1,0 +1,45 @@
+﻿@model WorkFlowManager.Models.Worker
+
+@{
+    Layout = "_Layout";
+}
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.FirstName)
+            @Html.EditorFor(x => x.FirstName)
+            @Html.ValidationMessageFor(x => x.FirstName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.LastName)
+            @Html.EditorFor(x => x.LastName)
+            @Html.ValidationMessageFor(x => x.LastName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.JobTitle)
+            @Html.EditorFor(x => x.JobTitle)
+            @Html.ValidationMessageFor(x => x.JobTitle)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.HourlyRate)
+            @Html.EditorFor(x => x.HourlyRate)
+            @Html.ValidationMessageFor(x => x.HourlyRate)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.License)
+            @Html.EditorFor(x => x.License)
+            @Html.ValidationMessageFor(x => x.License)
+        </div>
+
+        <button class="btn btn-default" type="submit">Register Worker</button>
+    </div>
+}

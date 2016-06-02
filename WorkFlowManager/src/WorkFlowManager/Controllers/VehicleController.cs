@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using WorkFlowManager.Models;
 using Microsoft.Data.Entity;
+using WorkFlowManager.DAL;
 
 
 namespace WorkFlowManager.Controllers
