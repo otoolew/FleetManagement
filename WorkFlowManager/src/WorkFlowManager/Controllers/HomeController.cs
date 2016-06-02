@@ -12,23 +12,7 @@ namespace WorkFlowManager.Controllers
         public IActionResult Index()
         {
             return View();
-        }
-        public IActionResult Fleet()
-        {
-            return View();
-        }
-        public IActionResult Part()
-        {
-            return View();
-        }
-        public IActionResult Business()
-        {
-            return View();
-        }
-        public IActionResult Job()
-        {
-            return View();
-        }
+        }     
         public IActionResult Support()
         {
             ViewData["Message"] = "Please contact us if you need any technical support.";
