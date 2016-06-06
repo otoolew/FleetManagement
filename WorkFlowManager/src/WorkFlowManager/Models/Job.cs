@@ -41,7 +41,10 @@ namespace WorkFlowManager.Models
         [DataType(DataType.Date)]
         [Display(Name = "Quote Date")]
         public string QuoteDate { get; set; }
-     
+
+        public virtual ICollection<Vehicle> Vehicles { get; set; }
+        public virtual ICollection<Worker> Workers { get; set; }
+        public virtual ICollection<Material> Materials { get; set; }
         //public List<Part> Parts { get; set; }
     }
 }
