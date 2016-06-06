@@ -39,5 +39,10 @@ namespace WorkFlowManager.Models
         [DataType(DataType.Text)]
         [Display(Name = "Supplier")]
         public string Supplier { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Assignment")]
+        public string Assignment { get; set; }
     }
 }

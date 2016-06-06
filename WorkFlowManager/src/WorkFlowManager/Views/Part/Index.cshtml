@@ -28,7 +28,10 @@
             </th>   
             <th>
                 Supplier
-            </th>       
+            </th> 
+            <th>
+                Assignment
+            </th>         
         </tr>
     </thead>
     <tbody>
@@ -52,7 +55,10 @@
                 </td> 
                 <td>
                     @Html.DisplayFor(modelItem => part.Supplier)
-                </td>               
+                </td>   
+                <td>
+                    @Html.DisplayFor(modelItem => part.Assignment)
+                </td>             
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { Id = part.Id }) |
                     @Html.ActionLink("Details", "Details", new { Id = part.Id }) |

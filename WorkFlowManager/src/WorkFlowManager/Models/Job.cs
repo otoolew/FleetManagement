@@ -45,6 +45,6 @@ namespace WorkFlowManager.Models
         public virtual ICollection<Vehicle> Vehicles { get; set; }
         public virtual ICollection<Worker> Workers { get; set; }
         public virtual ICollection<Material> Materials { get; set; }
-        //public List<Part> Parts { get; set; }
+        public List<Material> MaterialList { get; set; }
     }
 }

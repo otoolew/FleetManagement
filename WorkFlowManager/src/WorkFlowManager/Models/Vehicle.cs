@@ -37,7 +37,7 @@ namespace WorkFlowManager.Models
 
         [Required]
         [DataType(DataType.Text)]
-        [Range(1940,2100, ErrorMessage = "Please enter a valid Year")]
+        [Range(1940, 2100, ErrorMessage = "Please enter a valid Year")]
         [Display(Name = "Year")]
         public string Year { get; set; }
 
