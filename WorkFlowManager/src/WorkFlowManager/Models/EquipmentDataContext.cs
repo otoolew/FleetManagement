@@ -26,6 +26,6 @@ namespace WorkFlowManager.Models
             base.OnModelCreating(modelBuilder);
             modelBuilder.ForSqlServerUseIdentityColumns();
         }
-
+        ;
     }
 }
