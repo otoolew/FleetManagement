@@ -2,6 +2,7 @@
 
 @{
     Layout = "_Layout";
+    ViewBag.Title = "Create Vehicle";
 }
 <h2>Create</h2>
 
@@ -49,6 +50,22 @@
             @Html.LabelFor(x => x.License)
             @Html.EditorFor(x => x.License)
             @Html.ValidationMessageFor(x => x.License)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Registration)
+            @Html.EditorFor(x => x.Registration)
+            @Html.ValidationMessageFor(x => x.Registration)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Engine)
+            @Html.EditorFor(x => x.Engine)
+            @Html.ValidationMessageFor(x => x.Engine)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Transmission)
+            @Html.EditorFor(x => x.Transmission)
+            @Html.ValidationMessageFor(x => x.Transmission)
+
         </div>
         <button class="btn btn-default" type="submit">Register Vehicle</button>
     </div>

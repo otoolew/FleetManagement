@@ -1,41 +1,28 @@
-﻿@model WorkFlowManager.Models.Equipment
+﻿@model WorkFlowManager.Models.Worker
 @{
     Layout = "_Layout";
-    ViewBag.Title = "Equipment Details";
+    ViewBag.Title = "Worker Details";
 }
-<h2>@Html.DisplayFor(model => model.Name)</h2>
+<h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h2>
 <div>
-    <h4>Details</h4>
+    <h4>@Html.DisplayFor(model => model.JobTitle)</h4>
     <hr />
-    <dl class="dl-horizontal">           
+    <dl class="dl-horizontal">        
         <dt>
-            @Html.DisplayNameFor(model => model.Make)
+            @Html.DisplayNameFor(model => model.HourlyRate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Make)
-        </dd>
+            @Html.DisplayFor(model => model.HourlyRate)
+        </dd>   
+            
         <dt>
-            @Html.DisplayNameFor(model => model.Model)
+            @Html.DisplayNameFor(model => model.License)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Model)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Year)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Year)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
+            @Html.DisplayFor(model => model.License)
+        </dd>        
         @*<dd>
                 <table class="table">
                     <tr>

@@ -1,50 +1,37 @@
-﻿@model WorkFlowManager.Models.Bid
+﻿@model WorkFlowManager.Models.Material
 @{
-    ViewBag.Title = "Details";
+    Layout = "_Layout";
+    ViewBag.Title = "Material Details";
 }
 
-<h2>Details</h2>
+<h2>@Html.DisplayFor(model => model.Description)</h2>
 <div>
-    <h4>Bid</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal">       
         <dt>
-            @Html.DisplayNameFor(model => model.ECMS)
+            @Html.DisplayNameFor(model => model.BinLocation)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ECMS)
+            @Html.DisplayFor(model => model.BinLocation)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.County)
+            @Html.DisplayNameFor(model => model.Price)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.County)
+            @Html.DisplayFor(model => model.Price)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Location)
+            @Html.DisplayNameFor(model => model.Quantity)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Location)
+            @Html.DisplayFor(model => model.Quantity)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BidLetDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BidLetDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.QuoteDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.QuoteDate)
-        </dd>
+       
         @*<dd>
                 <table class="table">
                     <tr>

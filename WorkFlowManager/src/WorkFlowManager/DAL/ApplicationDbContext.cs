@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.EntityFramework;
+using WorkFlowManager.Models;
 using Microsoft.Data.Entity;
 
-namespace WorkFlowManager.Models
+namespace WorkFlowManager.DAL
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

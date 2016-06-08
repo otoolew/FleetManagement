@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WorkFlowManager.Models.Material>
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Materials";
+}
+
+<h1>Material Management</h1>
+
+<a asp-controller="Material" asp-action="Create" class="btn btn-success">New Material</a>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Item Number
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                BinLocation
+            </th>          
+            <th>
+                Price
+            </th>                    
+            <th>
+                Quantity
+            </th>                
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var material in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => material.ItemNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => material.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => material.BinLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => material.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => material.Quantity)
+                </td>                                   
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Id = material.Id }) |
+                    @Html.ActionLink("Details", "Details", new { Id = material.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { Id = material.Id })
+                </td>
+            </tr>
+
+            @*@Html.Partial("_Vehicle", vehicle)*@
+        }
+    </tbody>
+</table>

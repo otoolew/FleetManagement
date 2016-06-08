@@ -1,17 +1,18 @@
-﻿using Microsoft.Data.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Data.Entity;
+using WorkFlowManager.Models;
 
-namespace WorkFlowManager.Models
+namespace WorkFlowManager.DAL
 {
-    public class VehicleDataContext : DbContext
+    public class PartDataContext : DbContext
     {
         // Controller will use
-        public DbSet<Vehicle> Vehicles { get; set; }
-
-        public VehicleDataContext()
+        public DbSet<Part> Parts { get; set; }
+       
+        public PartDataContext()
         {
             Database.EnsureCreated();
         }
@@ -27,4 +28,5 @@ namespace WorkFlowManager.Models
             modelBuilder.ForSqlServerUseIdentityColumns();
         }
     }
+
 }

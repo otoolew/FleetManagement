@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using WorkFlowManager.Models;
 using Microsoft.Data.Entity;
+using WorkFlowManager.DAL;
+
 
 namespace WorkFlowManager.Controllers
 {
@@ -48,9 +50,10 @@ namespace WorkFlowManager.Controllers
         {
             public string Serial { get; set; }
             public string Name { get; set; }          
-            public string Make { get; set; }
+            public string Brand { get; set; }
             public string Model { get; set; }
-            public string Type { get; set; }            
+            public string Type { get; set; }
+            public string Supplier { get; set; }
         }
 
         [HttpPost]
@@ -63,10 +66,10 @@ namespace WorkFlowManager.Controllers
 
             part.Serial = part.Serial;
             part.Name = part.Name;
-            part.Make = part.Make;
+            part.Brand = part.Brand;
             part.Model = part.Model;
             part.Type = part.Type;
-
+            part.Supplier = part.Supplier;
             _dataContext.Parts.Add(part);
 
             await _dataContext.SaveChangesAsync();
@@ -100,10 +103,10 @@ namespace WorkFlowManager.Controllers
 
             part.Serial = part.Serial;
             part.Name = part.Name;
-            part.Make = part.Make;
+            part.Brand = part.Brand;
             part.Model = part.Model;
             part.Type = part.Type;
-
+            part.Supplier = part.Supplier;
             _dataContext.Parts.Update(part);
 
             await _dataContext.SaveChangesAsync();

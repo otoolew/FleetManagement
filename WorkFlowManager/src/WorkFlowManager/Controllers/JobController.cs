@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using WorkFlowManager.Models;
+using WorkFlowManager.DAL;
 
 namespace WorkFlowManager.Controllers
 {
@@ -43,15 +44,15 @@ namespace WorkFlowManager.Controllers
             return View();
         }
 
-        public class CreateBidRequest
-        {
-            public string ECMS { get; set; }
-            public string Number { get; set; }
-            public string Description { get; set; }
-            public string Quantity { get; set; }
-            public string Price { get; set; }
-            public string Amount { get; set; }
-        }
+        //public class CreateJobRequest
+        //{
+        //    public string ECMS { get; set; }
+        //    public string Number { get; set; }
+        //    public string Description { get; set; }
+        //    public string Quantity { get; set; }
+        //    public string Price { get; set; }
+        //    public string Amount { get; set; }
+        //}
 
         [HttpPost]
         public async Task<IActionResult> Create(Job job)
@@ -61,11 +62,11 @@ namespace WorkFlowManager.Controllers
                 return View(job);
             }
             job.ECMS = job.ECMS;
-            job.Number = job.Number;
-            job.Description = job.Description;
-            job.Quantity = job.Quantity;
-            job.Price = job.Price;
-            job.Amount = job.Amount;
+            job.Contractor = job.Contractor;
+            job.County = job.County;
+            job.Location = job.Location;
+            job.BidLetDate = job.BidLetDate;
+            job.QuoteDate = job.QuoteDate;
 
             _dataContext.Jobs.Add(job);
 
@@ -98,11 +99,11 @@ namespace WorkFlowManager.Controllers
                 return View(job);
             }
             job.ECMS = job.ECMS;
-            job.Number = job.Number;
-            job.Description = job.Description;
-            job.Quantity = job.Quantity;
-            job.Price = job.Price;
-            job.Amount = job.Amount;
+            job.Contractor = job.Contractor;
+            job.County = job.County;
+            job.Location = job.Location;
+            job.BidLetDate = job.BidLetDate;
+            job.QuoteDate = job.QuoteDate;
 
             _dataContext.Jobs.Update(job);
 

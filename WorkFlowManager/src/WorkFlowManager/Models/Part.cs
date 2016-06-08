@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace WorkFlowManager.Models
 {
@@ -22,8 +22,8 @@ namespace WorkFlowManager.Models
 
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Make")]
-        public string Make { get; set; }
+        [Display(Name = "Brand")]
+        public string Brand { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
@@ -34,5 +34,10 @@ namespace WorkFlowManager.Models
         [DataType(DataType.Text)]
         [Display(Name = "Type")]
         public string Type { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Supplier")]
+        public string Supplier { get; set; }
     }
 }

@@ -1,0 +1,46 @@
+﻿@model WorkFlowManager.Models.Material
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Create Materials";
+}
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div class="form-horizontal">
+     
+        <div class="form-group">
+            @Html.LabelFor(x => x.ItemNumber)
+            @Html.EditorFor(x => x.ItemNumber)
+            @Html.ValidationMessageFor(x => x.ItemNumber)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Description)
+            @Html.EditorFor(x => x.Description)
+            @Html.ValidationMessageFor(x => x.Description)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.BinLocation)
+            @Html.EditorFor(x => x.BinLocation)
+            @Html.ValidationMessageFor(x => x.BinLocation)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Price)
+            @Html.EditorFor(x => x.Price)
+            @Html.ValidationMessageFor(x => x.Price)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Quantity)
+            @Html.EditorFor(x => x.Quantity)
+            @Html.ValidationMessageFor(x => x.Quantity)
+        </div>
+
+        <button class="btn btn-default" type="submit">Add New Material</button>
+    </div>
+}

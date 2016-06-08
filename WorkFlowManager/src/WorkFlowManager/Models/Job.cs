@@ -19,33 +19,32 @@ namespace WorkFlowManager.Models
 
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Number")]
-        //[StringLength(100, MinimumLength = 5, ErrorMessage = "VIN must be between 5 and 100 characters long.")]
-        public string Number { get; set; }
+        [Display(Name = "Contractor")]
+        public string Contractor { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Description")]
-        //[StringLength(100, MinimumLength = 5, ErrorMessage = "Name must be between 5 and 100 characters long.")]
-        public string Description { get; set; }
+        [Display(Name = "County")]
+        public string County { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Quantity")]
-        //[StringLength(50, MinimumLength = 3, ErrorMessage = "Make must be between 3 and 50 characters long.")]
-        public string Quantity { get; set; }
+        [Display(Name = "Location")]
+        public string Location { get; set; }
 
         [Required]
-        [DataType(DataType.Currency)]
-        [Display(Name = "Price")]
-        //[StringLength(50, MinimumLength = 3, ErrorMessage = "Model must be between 3 and 50 characters long.")]
-        public string Price { get; set; }
+        [DataType(DataType.Date)]
+        [Display(Name = "Bid / Let Date")]
+        public string BidLetDate { get; set; }
 
         [Required]
-        [DataType(DataType.Currency)]     
-        [Display(Name = "Amount")]
-        public string Amount { get; set; }
+        [DataType(DataType.Date)]
+        [Display(Name = "Quote Date")]
+        public string QuoteDate { get; set; }
 
+        public virtual ICollection<Vehicle> Vehicles { get; set; }
+        public virtual ICollection<Worker> Workers { get; set; }
+        public virtual ICollection<Material> Materials { get; set; }
         //public List<Part> Parts { get; set; }
     }
 }

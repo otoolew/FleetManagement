@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Data.Entity;
 using System.Threading.Tasks;
+using Microsoft.Data.Entity;
+using WorkFlowManager.Models;
 
-namespace WorkFlowManager.Models
+namespace WorkFlowManager.DAL
 {
-    public class BidDataContext : DbContext
-    {
-        public DbSet<Bid> Bids { get; set; }
+    public class WorkerDataContext : DbContext
+    {        
+        public DbSet<Worker> Workers { get; set; }
 
-        public BidDataContext()
+        public WorkerDataContext()
         {
             Database.EnsureCreated();
         }
