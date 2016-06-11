@@ -1,0 +1,34 @@
+﻿@model WorkFlowManager.Models.Report
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Create Report";
+}
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.ReportDate)
+            @Html.EditorFor(x => x.ReportDate)
+            @Html.ValidationMessageFor(x => x.ReportDate)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.VehicleID)
+            @Html.EditorFor(x => x.VehicleID)
+            @Html.ValidationMessageFor(x => x.VehicleID)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Comment)
+            @Html.EditorFor(x => x.Comment)
+            @Html.ValidationMessageFor(x => x.Comment)
+        </div>        
+
+        <button class="btn btn-default" type="submit">Add Report to Vehicle</button>
+    </div>
+}

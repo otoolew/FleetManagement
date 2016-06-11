@@ -15,8 +15,8 @@
 
         <dd>
             @Html.DisplayFor(model => model.VIN)
-        </dd> 
-         
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Make)
         </dt>
@@ -81,26 +81,32 @@
             @Html.DisplayFor(model => model.Transmission)
         </dd>
         @*<dd>
-            <table class="table">
-                <tr>
-                    <th>Parts Assigned</th>
-                    <th>Grade</th>
-                </tr>
-                @foreach (var item in Model.Enrollments)
-                {
+                <table class="table">
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Course.Title)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Grade)
-                        </td>
+                        <th>Parts Assigned</th>
+                        <th>Grade</th>
                     </tr>
-                }
-            </table>
-        </dd>*@
+                    @foreach (var item in Model.Enrollments)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Course.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Grade)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </dd>*@
     </dl>
+
 </div>
+<hr />
+<p>
+    <a asp-controller="Report" asp-action="Create">Add Maintenance Report</a>
+</p>
+<hr />
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")

@@ -57,13 +57,14 @@ namespace WorkFlowManager
             services.AddMvc();
 
             // Add Model Data Context Here
-            services.AddScoped<VehicleDataContext>();// Dependancy Injection
-            services.AddScoped<PartDataContext>();// Dependancy Injection
-            services.AddScoped<EquipmentDataContext>();// Dependancy Injection
-            services.AddScoped<JobDataContext>();// Dependancy Injection           
-            services.AddScoped<WorkerDataContext>();// Dependancy Injection
-            services.AddScoped<MaterialDataContext>();// Dependancy Injection
-
+            // Dependancy Injection
+            services.AddScoped<VehicleDataContext>();
+            services.AddScoped<PartDataContext>();
+            services.AddScoped<EquipmentDataContext>();
+            services.AddScoped<JobDataContext>();       
+            services.AddScoped<WorkerDataContext>();
+            services.AddScoped<MaterialDataContext>();
+            services.AddScoped<ReportDataContext>();
 
             services.AddTransient<FormatService>();
             // Add application services.
