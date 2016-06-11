@@ -42,9 +42,11 @@ namespace WorkFlowManager.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public IActionResult Create(long Id)
         {
-            return View();
+            var report = new Report();
+            report.Id = Id;
+            return View(report);
         }
 
         //public class CreateReportRequest
@@ -68,7 +70,7 @@ namespace WorkFlowManager.Controllers
             report.ReportDate = report.ReportDate;
             report.VehicleID = report.VehicleID;
             report.Comment = report.Comment;
-            
+
             _dataContext.Reports.Add(report);
 
             await _dataContext.SaveChangesAsync();
