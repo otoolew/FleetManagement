@@ -27,6 +27,5 @@ namespace WorkFlowManager.DAL
             base.OnModelCreating(modelBuilder);
             modelBuilder.ForSqlServerUseIdentityColumns();
         }
-
     }
 }
