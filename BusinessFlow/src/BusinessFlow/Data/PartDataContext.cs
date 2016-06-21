@@ -18,8 +18,8 @@ namespace BusinessFlow.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);           
-            var connectionString = @"Data Source=(localdb)\v11.0;Initial Catalog=LocalWWLPC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+            base.OnConfiguring(optionsBuilder);
+            var connectionString = @"Data Source=(localdb)\v11.0;Initial Catalog=BusinessFlow;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
             optionsBuilder.UseSqlServer(connectionString);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
