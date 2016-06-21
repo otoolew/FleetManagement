@@ -19,6 +19,7 @@ namespace BusinessFlow.Controllers
         public IActionResult Index()
         {
             var vehicles = _dataContext.Vehicles.OrderByDescending(x => x.Id).ToArray();
+           // var vehicles = _dataContext.Vehicles.OrderByDescending(x => x.Id).ToArray();
             return View(vehicles);
         }
 
