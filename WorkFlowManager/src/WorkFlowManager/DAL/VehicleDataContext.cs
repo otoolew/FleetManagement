@@ -11,7 +11,7 @@ namespace WorkFlowManager.DAL
     {
         // Controller will use
         public DbSet<Vehicle> Vehicles { get; set; }
-
+        public DbSet<Vehicle> Parts { get; set; }
         public VehicleDataContext()
         {
             Database.EnsureCreated();
@@ -26,6 +26,7 @@ namespace WorkFlowManager.DAL
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ForSqlServerUseIdentityColumns();
+            
         }
     }
 }
