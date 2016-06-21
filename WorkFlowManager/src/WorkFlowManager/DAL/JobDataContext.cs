@@ -17,8 +17,8 @@ namespace WorkFlowManager.DAL
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
-            var connectionString = @"Server=tcp:bitrivet.database.windows.net,1433;Data Source=bitrivet.database.windows.net;Initial Catalog=WWLPC;Persist Security Info=False;User ID=BRSADMIN;Password=UPJcpa409$;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            base.OnConfiguring(optionsBuilder);          
+            var connectionString = @"Data Source=(localdb)\v11.0;Initial Catalog=LocalWWLPC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
             optionsBuilder.UseSqlServer(connectionString);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
