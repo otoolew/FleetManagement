@@ -4,23 +4,26 @@ using Microsoft.AspNetCore.Mvc;
 using BusinessFlow.Models;
 using BusinessFlow.Data;
 
+// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+
 namespace BusinessFlow.Controllers
 {
-    public class HomeController : Controller
+    public class InventoryController : Controller
     {
+        // GET: /<controller>/
         public IActionResult Index()
         {
             return View();
         }
-
-        public IActionResult Support()
+        public IActionResult Equipment()
         {
-            ViewData["Message"] = "Please contact us if you need any technical support.";
-
             return View();
         }
- 
-        public IActionResult Error()
+        public IActionResult Part()
+        {
+            return View();
+        }
+        public IActionResult Material()
         {
             return View();
         }

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WorkFlowManager.Models.Report>
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Reports";
+}
+
+<h1>Reports Management</h1>
+
+<a asp-controller="Report" asp-action="Create" class="btn btn-success">New Report</a>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Report Date
+            </th>
+            <th>
+                Vehicle
+            </th>
+            <th>
+                Comment
+            </th>                     
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => report.ReportDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => report.VehicleID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => report.Comment)
+                </td>                            
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Id = report.Id }) |
+                    @Html.ActionLink("Details", "Details", new { Id = report.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { Id = report.Id })
+                </td>
+            </tr>
+
+            @*@Html.Partial("_Vehicle", vehicle)*@
+        }
+    </tbody>
+</table>

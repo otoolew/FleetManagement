@@ -1,0 +1,50 @@
+﻿@model WorkFlowManager.Models.Job
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Create Job";
+}
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.ECMS)
+            @Html.EditorFor(x => x.ECMS)
+            @Html.ValidationMessageFor(x => x.ECMS)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Contractor)
+            @Html.EditorFor(x => x.Contractor)
+            @Html.ValidationMessageFor(x => x.Contractor)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.County)
+            @Html.EditorFor(x => x.County)
+            @Html.ValidationMessageFor(x => x.County)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Location)
+            @Html.EditorFor(x => x.Location)
+            @Html.ValidationMessageFor(x => x.Location)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.BidLetDate)
+            @Html.EditorFor(x => x.BidLetDate)
+            @Html.ValidationMessageFor(x => x.BidLetDate)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.QuoteDate)
+            @Html.EditorFor(x => x.QuoteDate)
+            @Html.ValidationMessageFor(x => x.QuoteDate)
+        </div>
+
+        <button class="btn btn-default" type="submit">Add Job Listing</button>
+    </div>
+}

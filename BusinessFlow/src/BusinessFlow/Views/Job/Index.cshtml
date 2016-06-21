@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WorkFlowManager.Models.Job>
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Job";
+}
+
+<h1>Job Management</h1>
+
+<a asp-controller="Job" asp-action="Create" class="btn btn-success">New Job</a>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                ECMS
+            </th>
+            <th>
+                Contractor
+            </th>
+            <th>
+                County
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                BidLetDate
+            </th>
+            <th>
+                QuoteDate
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var part in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => part.ECMS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Contractor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.County)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.BidLetDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => part.QuoteDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Id = part.Id }) |
+                    @Html.ActionLink("Details", "Details", new { Id = part.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { Id = part.Id })
+                </td>
+            </tr>           
+        }
+    </tbody>
+</table>

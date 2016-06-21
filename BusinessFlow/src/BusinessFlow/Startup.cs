@@ -54,7 +54,17 @@ namespace BusinessFlow
 
             services.AddMvc();
 
+            // Add Model Data Context Here
+            // Dependancy Injection
+            services.AddScoped<VehicleDataContext>();
+            services.AddScoped<PartDataContext>();
+            services.AddScoped<EquipmentDataContext>();
+            services.AddScoped<JobDataContext>();
+            services.AddScoped<WorkerDataContext>();
+            services.AddScoped<MaterialDataContext>();
+            services.AddScoped<ReportDataContext>();
             // Add application services.
+
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
         }

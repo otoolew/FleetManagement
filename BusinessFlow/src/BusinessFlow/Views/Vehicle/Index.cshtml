@@ -1,0 +1,78 @@
+﻿@model IEnumerable<WorkFlowManager.Models.Vehicle>
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Vehicles";
+}
+<h1>FLEET MANAGEMENT</h1>
+
+<a asp-controller="Vehicle" asp-action="Create" class="btn btn-success">New Vehicle</a>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                VIN
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Make
+            </th>
+            <th>
+                Year
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                License
+            </th>
+            <th>
+                Registration
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicle in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => vehicle.VIN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => vehicle.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => vehicle.Make)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => vehicle.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => vehicle.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => vehicle.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => vehicle.License)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => vehicle.Registration)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Id = vehicle.Id }) |
+                    @Html.ActionLink("Details", "Details", new { Id = vehicle.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { Id = vehicle.Id })
+                </td>
+            </tr>
+
+            @*@Html.Partial("_Vehicle", vehicle)*@
+        }
+    </tbody>
+</table>
