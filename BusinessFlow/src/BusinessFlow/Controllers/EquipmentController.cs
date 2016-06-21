@@ -32,7 +32,7 @@ namespace BusinessFlow.Controllers
             Equipment piece = _dataContext.EquipmentList.SingleOrDefault(x => x.Id == Id);
             if (piece == null)
             {
-                return new StatusCodeResult(500);
+                return new NotFoundResult();
             }
             return View(piece);
         }

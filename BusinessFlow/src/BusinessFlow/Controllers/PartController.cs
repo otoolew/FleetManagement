@@ -121,7 +121,7 @@ namespace BusinessFlow.Controllers
             Part part = _dataContext.Parts.SingleOrDefault(x => x.Id == Id);
             if (part == null)
             {
-                return new StatusCodeResult(500);
+                return new NotFoundResult();
             }
             return View(part);
         }

@@ -119,7 +119,7 @@ namespace BusinessFlow.Controllers
             Worker worker = _dataContext.Workers.SingleOrDefault(x => x.Id == Id);
             if (worker == null)
             {
-                return new StatusCodeResult(500);
+                return new NotFoundResult();
             }
             return View(worker);
         }

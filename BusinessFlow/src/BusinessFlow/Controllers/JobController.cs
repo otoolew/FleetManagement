@@ -31,7 +31,7 @@ namespace BusinessFlow.Controllers
             Job job = _dataContext.Jobs.SingleOrDefault(x => x.Id == Id);
             if (job == null)
             {
-                return new StatusCodeResult(500);
+                return new NotFoundResult();
             }
             return View(job);
         }

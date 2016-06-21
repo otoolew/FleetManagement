@@ -11,7 +11,7 @@ namespace BusinessFlow.Data
     {
         // Controller will use
         public DbSet<Vehicle> Vehicles { get; set; }
-        public DbSet<Vehicle> Parts { get; set; }
+        public DbSet<Part> Parts { get; set; }
         public VehicleDataContext()
         {
             Database.EnsureCreated();

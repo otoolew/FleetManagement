@@ -32,7 +32,7 @@ namespace BusinessFlow.Controllers
             Vehicle vehicle = _dataContext.Vehicles.SingleOrDefault(x => x.Id == Id);
             if (vehicle == null)
             {
-                return new StatusCodeResult(500);
+                return new NotFoundResult();
             }
             return View(vehicle);
         }

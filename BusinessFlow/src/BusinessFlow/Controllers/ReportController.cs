@@ -119,7 +119,7 @@ namespace BusinessFlow.Controllers
             Report report = _dataContext.Reports.SingleOrDefault(x => x.Id == Id);
             if (report == null)
             {
-                return new StatusCodeResult(500);
+                return new NotFoundResult();
             }
             return View(report);
         }

@@ -78,7 +78,7 @@ namespace BusinessFlow.Controllers
             Material material = _dataContext.Materials.SingleOrDefault(x => x.Id == Id);
             if (material == null)
             {
-                return new StatusCodeResult(500);
+                return new NotFoundResult();
             }
             return View(material);
         }
